@@ -68,3 +68,12 @@ jobs:
           sudo docker pull timurgain/workflow_learn:22052022
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 timurgain/workflow_learn:22052022
+  
+  notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fateyan/action-discord-notifier@v1
+        with:
+          message-title: New Commits Pushed to github
+          webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
