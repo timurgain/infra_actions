@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'infra_app'
 
-# comment for testing workflows
+# comments for testing workflows
 urlpatterns = [
     path('', views.index, name='index'),
     path('second/', views.second_page, name='second_page'),
